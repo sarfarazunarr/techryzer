@@ -1,0 +1,72 @@
+import React from 'react'
+import { hfont } from '../../fonts/getfonts'
+import Logo from './Logo'
+
+const Footer = () => {
+    return (
+        <footer className="relative bg-gray-950/80 backdrop:blur-md pt-8 pb-6">
+            <div className="container mx-auto px-4">
+                <div className="flex flex-wrap text-left lg:text-left">
+                    <div className="w-full lg:w-6/12 px-4">
+                        <Logo />
+                        <h5 className="text-lg mt-0 mb-2 text-gray-400">
+                            Find us on any of these platforms, we respond 1-2 business days.
+                        </h5>
+                        <div className="mt-6 lg:mb-0 mb-6">
+                            icons.
+                        </div>
+                    </div>
+                    <div className="w-full lg:w-6/12 px-4">
+                        <div className="flex flex-wrap items-top mb-6">
+                            <div className="w-full lg:w-4/12 px-4 ml-auto">
+                                <span className="block uppercase text-sm font-normal mb-2 text-primary-500">Useful Links</span>
+                                <ul className="list-unstyled">
+                                    <li>
+                                        <a className="text-gray-600 hover:text-white font-normal block pb-2 text-sm" href="https://www.creative-tim.com/presentation?ref=njs-profile">About Us</a>
+                                    </li>
+                                    <li>
+                                        <a className="text-gray-600 hover:text-white font-normal block pb-2 text-sm" href="https://blog.creative-tim.com?ref=njs-profile">Blog</a>
+                                    </li>
+                                    <li>
+                                        <a className="text-gray-600 hover:text-white font-normal block pb-2 text-sm" href="https://www.github.com/creativetimofficial?ref=njs-profile">Github</a>
+                                    </li>
+                                    <li>
+                                        <a className="text-gray-600 hover:text-white font-normal block pb-2 text-sm" href="https://www.creative-tim.com/bootstrap-themes/free?ref=njs-profile">Free Products</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div className="w-full lg:w-4/12 px-4">
+                                <span className="block uppercase text-primary-500 text-sm font-normal mb-2">Other Resources</span>
+                                <ul className="list-unstyled">
+                                    <li>
+                                        <a className="text-gray-600 hover:text-white font-normal block pb-2 text-sm" href="https://github.com/creativetimofficial/notus-js/blob/main/LICENSE.md?ref=njs-profile">MIT License</a>
+                                    </li>
+                                    <li>
+                                        <a className="text-gray-600 hover:text-white font-normal block pb-2 text-sm" href="https://creative-tim.com/terms?ref=njs-profile">Terms &amp; Conditions</a>
+                                    </li>
+                                    <li>
+                                        <a className="text-gray-600 hover:text-white font-normal block pb-2 text-sm" href="https://creative-tim.com/privacy?ref=njs-profile">Privacy Policy</a>
+                                    </li>
+                                    <li>
+                                        <a className="text-gray-600 hover:text-white font-normal block pb-2 text-sm" href="https://creative-tim.com/contact-us?ref=njs-profile">Contact Us</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr className="my-6 border-gray-300" />
+                <div className="flex flex-wrap items-center md:justify-between justify-center">
+                    <div className="w-full md:w-4/12 px-4 mx-auto text-center">
+                        <div className="text-sm text-gray-500 font-normal py-1">
+                            Copyright © <span id="get-current-year">2024</span>All Rights Reserved By
+                            <a href="https://www.creative-tim.com?ref=njs-profile" className="text-gray-500 hover:text-white">Techryzer</a>.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    )
+}
+
+export default Footer
