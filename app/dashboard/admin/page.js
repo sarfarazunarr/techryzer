@@ -1,9 +1,11 @@
 import React from 'react'
+import { getUserSession } from '../../../lib/utils'
 
-const page = () => {
+const page = async () => {
+  const {name} = await getUserSession()
   return (
     <div>
-      <h3 className='text-3xl text-white font-bold'>Welcome Sarfaraz!</h3>
+      <h3 className='text-3xl text-white font-bold'>Welcome {name}!</h3>
       <h6 className='text-white text-xl pt-5'>General Overview</h6>
       <div className='grid grid-cols-4 '>
         <div className='p-3 my-3 rounded-md bg-gradient-to-bl border border-primary-500 from-primary-900 to-gray-800 mx-2'>

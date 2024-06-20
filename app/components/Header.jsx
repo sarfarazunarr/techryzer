@@ -23,7 +23,7 @@ const Header = () => {
             </div>
             <div className="flex justify-between gap-2 items-center animate__animated animate__fadeInRight">
                 <Link href={"/contact"} className='bg-primary-500 border border-transparent hover:bg-primary-700 text-white rounded-full py-2 px-4'>Send Message</Link>
-                <Link href={"/account"} className='bg-transparent  hover:bg-primary-500 text-white rounded-full py-2 px-4 border-2 border-primary-500 hover:border-transparent'>Account</Link>
+                <Link href={"/account/signin"} className='bg-transparent  hover:bg-primary-500 text-white rounded-full py-2 px-4 border-2 border-primary-500 hover:border-transparent'>Account</Link>
             </div>
         </nav>
     )

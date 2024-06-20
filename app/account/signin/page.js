@@ -24,7 +24,7 @@ const page = () => {
         }
         try {
             setLoading(true)
-            const res = signIn("credentials", {
+            const res = await signIn("credentials", {
                 email: data.email,
                 password: data.password,
                 redirect: false

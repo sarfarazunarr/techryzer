@@ -10,17 +10,15 @@ export const metadata = {
   description: "Your web development partner",
 };
 
-export default function RootLayout({ children }) {
+export default async function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-        id="main" className={`${ubuntu.className} bg-[#100C08] w-full `}
-      >
-        <Header />
-        {children}
-        <Footer />
-      </body>
-    </html>
+        <body id="main" className={`${ubuntu.className} bg-[#100C08] w-full `} >
+          <Header />
+          {children}
+          <Footer />
+        </body>
+    </html >
 
   );
 }

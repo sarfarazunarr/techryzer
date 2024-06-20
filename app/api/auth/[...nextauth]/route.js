@@ -1,5 +1,5 @@
 import CredentialsProvider from 'next-auth/providers/credentials'
-import NextAuth from 'next-auth/next'
+import NextAuth from 'next-auth'
 import {connectDB} from '../../../../lib/db_connection'
 import User from '../../../../lib/models/userModel'
 import bcrypt from 'bcryptjs'
@@ -12,7 +12,6 @@ const login = async (credentials) => {
         if(!isCorrect) throw new Error("Wrong Credentials");
         return user;
     } catch (error) {
-        console.log("Error while logging in")
         throw new Error("Something went wrong")
     }
 }
@@ -31,7 +30,7 @@ export const authOptions = {
                     const user = await login(credentials)
                     return user;
                 } catch (error) {
-                    throw new Error("Faile to login")
+                    throw new Error("Failed to login")
                 }
             }
         })
@@ -41,14 +40,15 @@ export const authOptions = {
             if(user){
                 token.email = user.email;
                 token.id = user.id;
+                token.account_type = user.account_type
             }
-            console.log(`This is token:`, token)
             return token;
         },
         async session({session, token}){
             if(token){
                 session.user.email = token.email;
                 session.user.id = token.id;
+                session.user.account_type = token.account_type;
             }
             return session;
         },

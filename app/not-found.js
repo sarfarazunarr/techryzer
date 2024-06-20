@@ -8,7 +8,9 @@ const NotFound = () => {
       <Gradbg />
       <h2 className='text-center text-4xl font-semibold text-white'>Page Not Found</h2>
       <p className='text-center text-gray-400 text-sm'>Sorry your are required page not found!</p>
-      <Link className='px-3 py-1 rounded-md bg-primary-600 text-white hover:shadow-2xl hover:shadow-primary-400 transition duration-200'>View Offers</Link>
+      <div className='flex justify-center items-center'>
+        <Link href={"/offers"} className='px-4 py-2 mx-auto rounded-md bg-primary-600 text-white hover:shadow-2xl hover:shadow-primary-400 transition duration-200'>View Offers</Link>
+      </div>
     </section>
   )
 }

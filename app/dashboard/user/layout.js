@@ -1,10 +1,15 @@
 import React from 'react'
 import { Ubuntu } from "next/font/google";
 import Sidebar from '../../components/Sidebar'
+import { getUserSession } from '../../../lib/utils';
+import NotFound from '../../not-found';
 const ubuntu = Ubuntu({ subsets: ["latin"], weight: '400' });
 
-const layout = ({ children }) => {
-
+const layout = async ({ children }) => {
+    const udata = await getUserSession()
+    if(udata.type !== 'client'){
+        return <NotFound />
+    }
     const links = [{ link: '/dashboard/user', name: "Home" }, { link: '/dashboard/user/projects', name: "Projects" }, { link: '/dashboard/user/payments', name: "Payments" }, { link: '/dashboard/user/projectstatus', name: "Project Status" }, { link: '/dashboard/user/helpline', name: "Help" }, { link: '/account/logout', name: "Logout" }]
 
     return (
