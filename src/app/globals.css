@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Outfit:wght@100..900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .navbarbtn {
+    @apply text-white p-5 px-7 border-x border-darkwhite hover:bg-darkblue transition-colors duration-300 ease-linear;
+  }
+  .navbarbtn-active{
+    @apply text-darkblue bg-lightwhite transition-colors duration-300 p-5 px-7 border-x border-darkwhite;
+  }
+  .primarybtn{
+    @apply bg-darkblue text-white px-5 py-3 rounded-full hover:bg-white hover:text-darkblue border border-transparent hover:border-darkwhite cursor-pointer transition-colors duration-300 ease-linear;
+  }
+  .secondarybtn{
+    @apply bg-white text-darkblue px-5 py-3 rounded-full hover:bg-darkblue hover:text-white border border-darkwhite hover:border-transparent cursor-pointer transition-colors duration-300 ease-linear;
+  }
+  .graybtn{
+    @apply bg-darkwhite text-lightwhite px-5 py-3 rounded-full hover:bg-white hover:text-darkwhite border border-darkwhite hover:border-transparent cursor-pointer transition-colors duration-300 ease-linear;
+  }
+}
+
+.showlines-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

@@ -1,0 +1,79 @@
+import React from 'react'
+import Logo from './Logo'
+import Link from 'next/link'
+import { CiLocationArrow1 } from 'react-icons/ci'
+import { GrLocation } from 'react-icons/gr'
+import { BiMailSend, BiPhone } from 'react-icons/bi'
+import { BsWhatsapp } from 'react-icons/bs'
+import { FaFacebook, FaGithub, FaLinkedin } from 'react-icons/fa'
+import { LiaLinkedin } from 'react-icons/lia'
+
+const Footer = () => {
+    return (
+        <footer className='w-full pt-14'>
+            <section className='flex flex-col gap-y-5 my-5 w-2/3 mx-auto'>
+                <h3 className='font-outfit text-6xl text-white text-center font-semibold'>Let&#39;s Work Together!</h3>
+                <p className='font-manrop text-center text-lightwhite leading-relaxed'>Take the first step towards a transformative future by partnering with us today. Explore our cutting-edge solutions in Blockchain, Data Engineering, and AI, and experience the power of innovation and seamless connectivity. Contact us now for a personalized consultation, and together, let's build a brighter tomorrow. Your success awaits!</p>
+                <button className='primarybtn w-32 mx-auto'>Get a Quote</button>
+            </section>
+
+            <section className='grid grid-cols-6 border mt-20 border-darkwhite w-full'>
+                <div className='col-span-2 pl-10 border-r border-darkwhite flex flex-col py-4 px-6 gap-y-4 justify-start items-start'>
+                    <Logo />
+                    <p className='text-sm text-lightwhite font-manrop leading-relaxed'>
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet nobis illum quisquam quaerat mollitia animi consectetur recusandae quae est repellendus, modi nam nulla hic voluptatum in quo veritatis adipisci, dolorem voluptatem? Odit voluptate omnis veniam recusandae mollitia est ipsam ea id accusantium doloremque repellendus numquam, ex in distinctio, beatae unde!
+                    </p>
+                </div>
+                <div className='flex flex-col col-span-4'>
+                    <nav className='flex justify-between border-b border-darkwhite text-lightwhite text-center p-4'>
+                        <Link href={"/"} >Home</Link>
+                        <Link href={"/"} >About</Link>
+                        <Link href={"/"} >Projects</Link>
+                        <Link href={"/"} >Blogs</Link>
+                        <Link href={"/"} >Contact</Link>
+                        <Link href={"/"} >Career</Link>
+                    </nav>
+                    <div className='grid grid-cols-3 h-full'>
+                        <div className='w-full  border border-darkwhite p-5 flex justify-start items-start flex-col gap-y-3'>
+                            <div className='w-10 h-10 p-2 flex justify-center items-center rounded-full bg-gray-700'>
+                            <GrLocation size={25} className='text-lightwhite' />
+                            </div>
+                            <h3 className='text-white font-semibold text-2xl'>Our Head Office</h3>
+                            <p className='text-sm text-lightwhite'>Opposite Post Office, Hala New, Sindh, Pakistan</p>
+                        </div>
+                        <div className='w-full  border border-darkwhite p-5 flex justify-start items-start flex-col gap-y-3'>
+                            <div className='w-10 h-10 p-2 flex justify-center items-center rounded-full bg-gray-700'>
+                            <BsWhatsapp size={25} className='text-lightwhite' />
+                            </div>
+                            <h3 className='text-white font-semibold text-2xl'>Connect on Whatsapp</h3>
+                            <p className='text-sm text-lightwhite'>+92 301 2591774</p>
+                        </div>
+                        <div className='w-full  border border-darkwhite p-5 flex justify-start items-start flex-col gap-y-3'>
+                            <div className='w-10 h-10 p-2 flex justify-center items-center rounded-full bg-gray-700'>
+                            <BiMailSend size={25} className='text-lightwhite' />
+                            </div>
+                            <h3 className='text-white font-semibold text-2xl'>Mail Us</h3>
+                            <p className='text-sm text-lightwhite'>techryzer@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div className='flex justify-between px-5 py-2'>
+                <p className='text-lightwhite'>Copyright 2024 All rights reserved by Techryzer.</p>
+                <div className='flex justify-end gap-5'>
+                    <Link href={"https://facebook.com/techryzer"}>
+                        <FaFacebook size={25} className='text-white' />
+                    </Link>
+                    <Link href={"https://linkedin.com/company/techryzer"}>
+                        <FaLinkedin size={25} className='text-white' />
+                    </Link>
+                    <Link href={"https://github.com/techryzer"}>
+                        <FaGithub size={25} className='text-white' />
+                    </Link>
+                </div>
+            </div>
+        </footer>
+    )
+}
+
+export default Footer
