@@ -11,17 +11,17 @@ export default function Home() {
   
   return (
     <>
-      <section className="w-full pt-16 p-10">
-        <h3 className="text-center text-lightwhite opacity-65 font-manrop font-normal text-xl tracking-wider leading-relaxed">Developing Webs That Benefits Humans!</h3>
+      <section className="w-full pt-16 p-2 md:p-10">
+        <h3 className="text-center text-lightwhite opacity-65 font-manrop font-normal md:text-xl tracking-wider leading-relaxed">Developing Webs That Benefits Humans!</h3>
         <div className="flex justify-center items-center gap-2">
-          <div className="flex mx-32 justify-start gap-y-5 my-10 flex-col">
+          <div className="flex mx-3 md:mx-32 justify-start gap-y-5 my-10 flex-col">
             <h1 className="font-outfit text-left text-5xl font-bold text-white">
               We create stunning web solutions that make your visions to reality!
             </h1>
-            <p className="text-lightwhite text-lg leading-relaxed">Techryzer provides web development, App Development and AI Integrations solutions and with that we develop and deploy projects that makes your life easier!</p>
+            <p className="text-lightwhite md:text-lg leading-relaxed">Techryzer provides web development, App Development and AI Integrations solutions and with that we develop and deploy projects that makes your life easier!</p>
             <Link href={"/contact"} className="primarybtn w-40 flex items-center justify-center gap-3 group">Connect Us <BsArrowRight size={20} className="group-hover:translate-x-3 transition-transform duration-300 ease-linear" /></Link>
           </div>
-          <Image src={"/on_chain.png"} width={600} height={600} alt="hero glob" />
+          <Image src={"/on_chain.png"} width={600} height={600} alt="hero glob" className="hidden md:block" />
         </div>
       </section>
 

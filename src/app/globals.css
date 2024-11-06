@@ -7,21 +7,60 @@
   .navbarbtn {
     @apply text-white p-5 px-7 border-x border-darkwhite hover:bg-darkblue transition-colors duration-300 ease-linear;
   }
-  .navbarbtn-active{
+
+  .navbarbtn-active {
     @apply text-darkblue bg-lightwhite transition-colors duration-300 p-5 px-7 border-x border-darkwhite;
   }
-  .primarybtn{
-    @apply bg-darkblue text-white px-5 py-3 rounded-full hover:bg-white hover:text-darkblue border border-transparent hover:border-darkwhite cursor-pointer transition-colors duration-300 ease-linear;
+
+  .primarybtn {
+    @apply bg-darkblue text-white px-5 py-3 rounded-full hover:bg-white hover:text-darkblue border border-transparent hover:border-darkwhite cursor-pointer transition-colors duration-300 ease-linear disabled:bg-gray-400 disabled:text-black;
   }
-  .secondarybtn{
-    @apply bg-white text-darkblue px-5 py-3 rounded-full hover:bg-darkblue hover:text-white border border-darkwhite hover:border-transparent cursor-pointer transition-colors duration-300 ease-linear;
+
+  .secondarybtn {
+    @apply bg-white text-darkblue px-5 py-3 rounded-full hover:bg-darkblue hover:text-white border border-darkwhite hover:border-transparent cursor-pointer transition-colors duration-300 ease-linear disabled:bg-gray-400 disabled:text-black;
   }
-  .graybtn{
-    @apply bg-darkwhite text-lightwhite px-5 py-3 rounded-full hover:bg-white hover:text-darkwhite border border-darkwhite hover:border-transparent cursor-pointer transition-colors duration-300 ease-linear;
+
+  .graybtn {
+    @apply bg-darkwhite text-lightwhite px-5 py-3 rounded-full hover:bg-white hover:text-darkwhite border border-darkwhite hover:border-transparent cursor-pointer transition-colors duration-300 ease-linear disabled:bg-gray-400 disabled:text-black;
   }
-  .contactinput{
+
+  .contactinput {
     @apply px-3 py-2 bg-transparent border border-darkwhite text-white font-manrop outline-none focus:border-lightwhite transition-colors duration-200 ease-linear
   }
+
+  #blogcontent h1 {
+    @apply text-5xl font-semibold font-outfit capitalize text-white
+  }
+  #blogcontent h2 {
+    @apply text-4xl font-semibold font-outfit capitalize text-white
+  }
+  #blogcontent h3 {
+    @apply text-3xl font-semibold font-outfit capitalize text-white
+  }
+
+  #blogcontent p {
+    @apply text-[18px] text-lightwhite font-normal font-manrop leading-relaxed
+  }
+
+  #blogcontent a {
+    color: #044ebd;
+    text-decoration: none;
+  }
+
+  #blogcontent a:hover {
+    text-decoration: underline;
+  }
+
+  #blogcontent ul,
+  #blogcontent ol {
+    padding-left: 1.5em;
+    margin: 1em 0;
+  }
+
+  #blogcontent li {
+    margin: 0.5em 0;
+  }
+
 }
 
 .showlines-3 {
