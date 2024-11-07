@@ -3,13 +3,14 @@ import { NextRequest, NextResponse } from "next/server";
 import ConnectDB from "@/utils/connectdb";
 import { uploadToCloudinary } from "../upload/route";
 
-export async function GET(req: NextRequest) {
+export async function GET() {
     try {
         await ConnectDB();
         const blogsData = await Blog.find({}).sort({ createdAt: -1 })
         return NextResponse.json({ blogsData }, { status: 200 })
-    } catch (error: any) {
-        return NextResponse.json({ error: error.message }, { status: 500 })
+    } catch (error: unknown) {
+        console.log(error)
+        return NextResponse.json("Failed to get blog", { status: 500 })
     }
 }
 
@@ -51,6 +52,7 @@ export async function POST(req: NextRequest) {
         }).save();
         return NextResponse.json({ message: "Blog Created!" }, { status: 201 })
     } catch (error: unknown) {
+        console.log(error)
         return NextResponse.json({ error: "Failed to create blog" }, { status: 500 })
     }
 }

@@ -15,6 +15,7 @@ export async function GET(req: NextRequest, { params }: { params: { id: string }
 
     return NextResponse.json({ blog, otherBlogs }, { status: 200 });
   } catch (e: unknown) {
+    console.log(e);
     return NextResponse.json({ error: `Failed to fetch blog!` }, { status: 500 });
   }
 }

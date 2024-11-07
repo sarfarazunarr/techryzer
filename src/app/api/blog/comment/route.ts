@@ -26,6 +26,7 @@ export async function POST(req: NextRequest) {
 
         return NextResponse.json({ message: "Commented!" }, { status: 201 });
     } catch (error: unknown) {
+        console.log(error)
         return NextResponse.json({ message: "Failed to comment"}, { status: 500 });
     }
 }
@@ -41,6 +42,7 @@ export async function GET(req: NextRequest) {
         
         return NextResponse.json(comments, { status: 200 });
     } catch (e: unknown) {
+        console.log(e)
         return NextResponse.json(
             { error: "Failed to fetch comments!"},
             { status: 500 }

@@ -14,6 +14,8 @@ export async function POST(req: NextRequest){
         if(!save) return NextResponse.json({error: "Failed"}, {status: 400})
         return NextResponse.json({message: "Subscribed Successfully!"});
     } catch (error: unknown) {
+        console.log(error)
+
         return NextResponse.json({error: "Try Again"});
         
     }
