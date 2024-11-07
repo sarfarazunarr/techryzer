@@ -36,8 +36,7 @@ export async function GET(req: NextRequest) {
         await ConnectDB();
         const searchParams = await req.nextUrl.searchParams
         const blogId = searchParams.get('blogId');
-        console.log(blogId)
-        // Fetch comments based on blogId
+
         const comments = await Comment.find({ blogId });
         
         return NextResponse.json(comments, { status: 200 });

@@ -1,12 +1,10 @@
 import React from 'react'
 import Logo from './Logo'
 import Link from 'next/link'
-import { CiLocationArrow1 } from 'react-icons/ci'
 import { GrLocation } from 'react-icons/gr'
-import { BiMailSend, BiPhone } from 'react-icons/bi'
+import { BiMailSend } from 'react-icons/bi'
 import { BsWhatsapp } from 'react-icons/bs'
 import { FaFacebook, FaGithub, FaLinkedin } from 'react-icons/fa'
-import { LiaLinkedin } from 'react-icons/lia'
 
 const Footer = () => {
     return (

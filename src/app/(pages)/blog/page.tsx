@@ -19,8 +19,8 @@ export interface Blog {
 
 const Blogs = async () => {
     
-    let data = await fetch(`${process.env.NEXT_PUBLIC_URL}/blog`)
-    let tempPosts = await data.json()
+    const data = await fetch(`${process.env.NEXT_PUBLIC_URL}/blog`)
+    const tempPosts = await data.json()
     const posts: Blog[] = tempPosts.blogsData;
     return (
         <div>

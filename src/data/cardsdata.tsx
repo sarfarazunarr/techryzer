@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { BiUser } from "react-icons/bi";
 import { FaServer, FaSignal } from "react-icons/fa";
 import { GiRunningNinja } from "react-icons/gi";

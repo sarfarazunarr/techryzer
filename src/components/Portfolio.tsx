@@ -1,7 +1,5 @@
-import Image from 'next/image'
 import React from 'react'
 import projectsdata from '../data/portfolio'
-import Link from 'next/link'
 import Card from './Card'
 
 const Portfolio = () => {

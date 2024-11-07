@@ -4,7 +4,7 @@ import MainSection from './MainSection'
 import Link from 'next/link'
 
 const Project = () => {
-    // {data}: {data: {img: string, title: string, short_description: string, url: string}[]}
+
   return (
     <section className='w-full py-20'>
         <MainSection title='Property Tax Calculator' content='Try our property tax calculator where users can easily calculate the property registry value like estamps, taxes value instantly. Note: This tool has currently District Matiari data.' image='/projects/propertytax.jpg' link='https://property-tax-calculator.vercel.app/' btnText='Visit Now' alt='propertytaxtool' span='New' />

@@ -14,7 +14,7 @@ const Career = () => {
                 <div className={"flex flex-col w-1/2 border border-darkwhite"}>
                     <div className='flex justify-between items-center p-4 px-7 border-b border-darkwhite'>
                         <div className='flex flex-col gap-4'>
-                            <h3 className='text-3xl text-lightwhite font-semibold font-outfit'>UI/UX Developer</h3>
+                            <h3 className='text-3xl text-lightwhite font-semibold font-outfit'>UI/UX Developer (Hired)</h3>
                             <div className='flex gap-3'>
                                 <span className=' rounded-full text-white px-3 py-2 border border-darkwhite'>Full Time</span>
                                 <span className='rounded-full text-white px-3 py-2 border border-darkwhite'>Remote</span>
