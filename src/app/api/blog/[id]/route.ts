@@ -2,7 +2,7 @@ import Blog from "@/models/Blogs.model";
 import ConnectDB from "@/utils/connectdb";
 import { NextRequest, NextResponse } from "next/server";
 
-export async function GET(req: NextRequest, { params }: { params: { id: string } }) {
+export async function GET(req: NextRequest, { params }) {
   try {
     await ConnectDB();
     const { id } = params;
