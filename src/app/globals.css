@@ -29,17 +29,17 @@
   }
 
   #blogcontent h1 {
-    @apply text-5xl font-semibold font-outfit capitalize text-white
+    @apply text-5xl font-semibold font-outfit pt-5 pb-3 capitalize text-white
   }
   #blogcontent h2 {
-    @apply text-4xl font-semibold font-outfit capitalize text-white
+    @apply text-4xl font-semibold font-outfit pt-5 pb-3 capitalize text-white
   }
   #blogcontent h3 {
-    @apply text-3xl font-semibold font-outfit capitalize text-white
+    @apply text-3xl font-semibold font-outfit pt-5 pb-3 capitalize text-white
   }
 
   #blogcontent p {
-    @apply text-[18px] text-lightwhite font-normal font-manrop leading-relaxed
+    @apply text-[15px] text-lightwhite font-normal font-manrop leading-relaxed
   }
 
   #blogcontent a {

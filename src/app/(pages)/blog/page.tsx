@@ -37,7 +37,7 @@ const Blogs = async () => {
             <section className='grid grid-cols-1 md:grid-cols-4 gap-3 pb-20 mx-4 md:mx-10'>
                 {posts.map((post: Blog, index: number) => {
                     return (
-                        <Card key={index} img={post.imgUrl} title={post.title} description={post.meta_description} link={process.env.NEXT_URL + "blog/" + post.slug } btnText='Read More' />
+                        <Card key={index} img={post.imgUrl} title={post.title} description={post.meta_description} link={"blog/" + post.slug } btnText='Read More' />
                     )
                 })}
 

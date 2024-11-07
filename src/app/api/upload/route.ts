@@ -6,7 +6,7 @@ type UploadResponse =
   { success: true; result?: UploadApiResponse } | 
   { success: false; error: UploadApiErrorResponse };
 
-const uploadToCloudinary = (
+export const uploadToCloudinary = (
   fileUri: string, fileName: string): Promise<UploadResponse> => {
   return new Promise((resolve, reject) => {
     cloudinary.uploader
@@ -14,7 +14,7 @@ const uploadToCloudinary = (
         invalidate: true,
         resource_type: "auto",
         filename_override: fileName,
-        folder: "product-images", // any sub-folder name in your cloud
+        folder: "images", // any sub-folder name in your cloud
         use_filename: true,
       })
       .then((result) => {

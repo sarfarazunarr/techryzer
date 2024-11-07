@@ -29,7 +29,7 @@ const Comment = ({ blogId }: {blogId: string}) => {
 
     return (
         <div className='flex flex-col bg-gray-800 p-5 md:p-10 gap-y-2 w-full md:w-1/2'>
-            <h3 className='text-3xl font-semibold font-outfit text-lightwhite'>Post Comment</h3>
+            <h3 className='text-2xl md:text-3xl font-semibold font-outfit text-lightwhite'>Post Comment</h3>
             <Form action={postComment} className="grid grid-cols-5 gap-2">
                 <input type="text" defaultValue={blogId} className='hidden' name="blogId" id="blogId" />
                 <input type="text" className='col-span-5 bg-transparent border border-white px-3 py-2 rounded-md text-lightwhite font-normal font-manrop' name="username" id="username" placeholder='Type Name here...' />
@@ -38,14 +38,14 @@ const Comment = ({ blogId }: {blogId: string}) => {
             </Form>
 
             <div className='py-4'>
-                <h3 className='text-3xl font-semibold font-outfit text-lightwhite'>Comments</h3>
+                <h3 className='text-2xl md:text-3xl font-semibold font-outfit text-lightwhite'>Comments</h3>
                 <div className='mt-4 flex flex-col gap-y-2'>
                     {comments.length > 0 && comments.map((comment: {username: string, comment: string}, index: number) => (
                         <div key={index} className='bg-gray-900 p-3 rounded-md'>
                             <div className='flex flex-start gap-2 items-center'>
                                 <Image src={"/username.jpg"} width={200} height={100} className='size-10 rounded-full' alt='user' />
                                 <div>
-                                    <h6 className='text-[20px] font-semibold text-white'>{comment.username}</h6>
+                                    <h6 className='md:text-[20px] font-semibold text-white'>{comment.username}</h6>
                                     <p className='font-normal text-sm text-lightwhite font-manrop'>{comment.comment}</p>
                                 </div>
                             </div>
