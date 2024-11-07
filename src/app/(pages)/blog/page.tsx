@@ -17,8 +17,34 @@ export interface Blog {
     "category": string,
 }
 
+export async function generateMetadata() {
+    return {
+      title: "Blogs - Techryzer",
+      description: "Here you will explore amazing blogs posted by Techryzer that will help you to gain more knowledge in tech and AI",
+      openGraph: {
+        title: "Blogs - Techryzer",
+        description: "Here you will explore amazing blogs posted by Techryzer that will help you to gain more knowledge in tech and AI",
+        url: `${process.env.NEXT_PUBLIC_URL}/blog`,
+        images: [
+          {
+            url: '/logo.jpg',
+            width: 400,
+            height: 400,
+            alt: "Blogs",
+          },
+        ],
+      },
+      twitter: {
+        card: 'summary_large_image',
+        title: "Blogs - Techryzer",
+        description: "Here you will explore amazing blogs posted by Techryzer that will help you to gain more knowledge in tech and AI",
+        images: ["/logo.jpg"],
+      },
+    };
+  }
+
 const Blogs = async () => {
-    
+        
     const data = await fetch(`${process.env.NEXT_PUBLIC_URL}/blog`)
     const tempPosts = await data.json()
     const posts: Blog[] = tempPosts.blogsData;

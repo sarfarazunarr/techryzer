@@ -1,7 +1,15 @@
 import React from 'react'
 import Hero from '@/components/Hero'
-import { TbArrowsDiagonal } from 'react-icons/tb'
 import { BsArrowUpRight } from 'react-icons/bs'
+
+
+export async function generateMetadata() {
+    return {
+        title: "Career - Techryzer",
+        description: "Wants to join Techryzer? Keep exploring careers and opportunities on Techryzer and find that match with your skillset!",
+    };
+}
+
 const Career = () => {
     return (
         <section>

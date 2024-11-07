@@ -1,6 +1,14 @@
 import Hero from '@/components/Hero'
 import React from 'react'
 import ContactForm from './form'
+
+export async function generateMetadata() {
+  return {
+    title: "Contact - Techryzer",
+    description: "Need any help or assistance? Just connect with techryzer team and get your problem solved instantly!",
+  };
+}
+
 const Contact = () => {
    
   return (

@@ -1,6 +1,12 @@
 import Hero from '@/components/Hero'
 import Project from '@/components/Project'
 import React from 'react'
+export async function generateMetadata() {
+  return {
+    title: "Projects - Techryzer",
+    description: "Explore amazing open source projects and web solutions that are available for free and some are freemium!",
+  };
+}
 
 const Projects = () => {
   return (

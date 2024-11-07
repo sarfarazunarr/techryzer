@@ -3,6 +3,32 @@ import Hero from '@/components/Hero'
 import { cardsData, testimonialData } from '@/data/cardsdata'
 import React from 'react'
 
+export async function generateMetadata() {
+  return {
+    title: "About Us - Techryzer",
+    description: "Wants to know about Techryzer? Here you will learn more about techryzer and thier features!",
+    openGraph: {
+      title: "About Us - Techryzer",
+      description: "Wants to know about Techryzer? Here you will learn more about techryzer and thier features!",
+      url: `${process.env.NEXT_PUBLIC_URL}/about`,
+      images: [
+        {
+          url: '/logo.jpg',
+          width: 400,
+          height: 400,
+          alt: "About",
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: "About Us - Techryzer",
+      description: "Wants to know about Techryzer? Here you will learn more about techryzer and thier features!",
+      images: ["/logo.jpg"],
+    },
+  };
+}
+
 const About = () => {
   return (
     <>

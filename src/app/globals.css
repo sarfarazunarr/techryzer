@@ -70,3 +70,28 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+@keyframes fill {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes text {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.animatecontainer {
+  animation: fill 2s ease-in-out infinite;
+}
+.animateText {
+  animation: text 2s ease-in-out infinite;
+}
