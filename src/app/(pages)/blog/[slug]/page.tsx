@@ -7,8 +7,8 @@ import Image from 'next/image';
 import { notFound } from 'next/navigation';
 
 // Metadata function for dynamic SEO metadata generation
-export async function generateMetadata({ params }: { params: { slug: string } }) {
-  const { slug } = params;
+export async function generateMetadata({ params }: {params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
   const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/blog/${slug}`);
   if (!res.ok) {
     return notFound();
@@ -42,8 +42,8 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 }
 
 // Updated BlogContent component with async data fetching moved outside params
-const BlogContent = async ({ params }: { params: { slug: string } }) => {
-  const { slug } = params;
+const BlogContent = async ({ params }: { params: Promise<{ slug: string }>}) => {
+  const { slug } = await params;
 
   const data = await fetch(`${process.env.NEXT_PUBLIC_URL}/blog/${slug}`);
   if (!data.ok) {
