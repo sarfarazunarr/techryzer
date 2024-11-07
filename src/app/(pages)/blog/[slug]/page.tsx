@@ -63,7 +63,7 @@ const BlogContent = async ({ params }: BlogContentProps) => {
       <Image src={post.imgUrl} width={600} height={600} className={" mx-auto object-cover rounded-md "} alt={post.title}/>
       <div className='grid grid-cols-1 md:grid-cols-8'>
         <div className='col-span-1 md:col-span-6 flex flex-col p-5 '>
-          <div id="blogcontent" className='pb-10 md:pb-0' dangerouslySetInnerHTML={{ __html: post.content }}></div>
+          <div id="blogcontent" className='pb-10' dangerouslySetInnerHTML={{ __html: post.content }}></div>
           <Comment blogId={post._id} />
         </div>
         <div className='col-span-2 p-4 rounded-md bg-[#1d1d1d]'>
