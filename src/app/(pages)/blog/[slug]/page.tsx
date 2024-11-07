@@ -6,15 +6,9 @@ import Comment from '@/components/Comment';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 
-interface BlogContentProps {
-  params: {
-    slug: string;
-  };
-}
-
 // Metadata function for dynamic SEO metadata generation
-export async function generateMetadata({ params }: BlogContentProps) {
-  const { slug } = params; // Removed `await` as params is not a promise
+export async function generateMetadata({ params }: { params: { slug: string } }) {
+  const { slug } = params;
   const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/blog/${slug}`);
   if (!res.ok) {
     return notFound();
@@ -47,12 +41,15 @@ export async function generateMetadata({ params }: BlogContentProps) {
   };
 }
 
-const BlogContent = async ({ params }: BlogContentProps) => {
-  const { slug } = params; // Removed `await` as params is not a promise
+// Updated BlogContent component with async data fetching moved outside params
+const BlogContent = async ({ params }: { params: { slug: string } }) => {
+  const { slug } = params;
+
   const data = await fetch(`${process.env.NEXT_PUBLIC_URL}/blog/${slug}`);
   if (!data.ok) {
     return notFound();
   }
+
   const tempPosts = await data.json();
   const post: Blog = tempPosts.blog;
   const otherPosts: Blog[] = tempPosts.otherBlogs;
