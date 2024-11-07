@@ -50,7 +50,7 @@ export async function POST(req: NextRequest) {
             title, meta_description, content, tags, slug, status, imgUrl, author, category
         }).save();
         return NextResponse.json({ message: "Blog Created!" }, { status: 201 })
-    } catch (error: any) {
-        return NextResponse.json({ error: error.message }, { status: 500 })
+    } catch (error: unknown) {
+        return NextResponse.json({ error: "Failed to create blog" }, { status: 500 })
     }
 }

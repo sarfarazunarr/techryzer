@@ -13,7 +13,7 @@ export async function POST(req: NextRequest){
         }).save();
         if(!save) return NextResponse.json({error: "Failed"}, {status: 400})
         return NextResponse.json({message: "Subscribed Successfully!"});
-    } catch (error) {
+    } catch (error: unknown) {
         return NextResponse.json({error: "Try Again"});
         
     }

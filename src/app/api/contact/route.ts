@@ -8,8 +8,8 @@ export async function POST(req: NextRequest) {
         const data = await req.formData();
         await Contact.create({ name: `${data.get('firstName')} ${data.get('lastName')}`, email: data.get('email'), phone: data.get('phone'), message: data.get('message') });
         return NextResponse.json({ message: "Message Sent Successfully!" }, { status: 200 });
-    } catch (error: any) {
-        return NextResponse.json({error: error.message}, {status: 500});
+    } catch (error: unknown) {
+        return NextResponse.json({error: "Failed to send message"}, {status: 500});
     }
 
 }

@@ -6,7 +6,7 @@ import { BsArrowUpRight } from 'react-icons/bs'
 const ContactForm = () => {
     const [pending, setPending] = useState(false);
     const [message, setMessage] = useState("");
-    const savedata = async(formData: any) => {
+    const savedata = async(formData: FormData) => {
         setPending(true);
         const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/contact`, {method: "POST", body: formData});
         if(!res.ok){

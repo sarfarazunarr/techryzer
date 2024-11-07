@@ -16,7 +16,7 @@ const Comment = ({ blogId }: {blogId: string}) => {
 
     useEffect(() => {
         fetchComments();
-    }, []);
+    }, [fetchComments]);
 
     // Post a new comment and refresh comments
     async function postComment(data:FormData) {

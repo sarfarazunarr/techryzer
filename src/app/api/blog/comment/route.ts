@@ -25,8 +25,8 @@ export async function POST(req: NextRequest) {
         }
 
         return NextResponse.json({ message: "Commented!" }, { status: 201 });
-    } catch (error: any) {
-        return NextResponse.json({ message: "Failed to comment", error: error.message }, { status: 500 });
+    } catch (error: unknown) {
+        return NextResponse.json({ message: "Failed to comment"}, { status: 500 });
     }
 }
 
@@ -40,9 +40,9 @@ export async function GET(req: NextRequest) {
         const comments = await Comment.find({ blogId });
         
         return NextResponse.json(comments, { status: 200 });
-    } catch (e: any) {
+    } catch (e: unknown) {
         return NextResponse.json(
-            { error: "Failed to fetch comments!", errormsg: e.message },
+            { error: "Failed to fetch comments!"},
             { status: 500 }
         );
     }

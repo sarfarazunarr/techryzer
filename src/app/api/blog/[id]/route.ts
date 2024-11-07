@@ -14,7 +14,7 @@ export async function GET(req: NextRequest, { params }: { params: { id: string }
     const otherBlogs = await Blog.find({ category: blog.category, slug: { $ne: id } }).limit(3);
 
     return NextResponse.json({ blog, otherBlogs }, { status: 200 });
-  } catch (error: any) {
-    return NextResponse.json({ error: `Failed to fetch blog ${error.message}` });
+  } catch (e: unknown) {
+    return NextResponse.json({ error: `Failed to fetch blog!` }, { status: 500 });
   }
 }

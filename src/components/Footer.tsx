@@ -11,7 +11,7 @@ const Footer = () => {
         <footer className='w-full pt-14'>
             <section className='flex flex-col gap-y-5 my-5 w-full md:w-2/3 mx-auto'>
                 <h3 className='font-outfit text-6xl text-white text-center font-semibold'>Let&#39;s Work Together!</h3>
-                <p className='font-manrop text-center text-lightwhite leading-relaxed px-2 md:px-0'>Take the first step towards a transformative future by partnering with us today. Explore our cutting-edge solutions in Blockchain, Data Engineering, and AI, and experience the power of innovation and seamless connectivity. Contact us now for a personalized consultation, and together, let's build a brighter tomorrow. Your success awaits!</p>
+                <p className='font-manrop text-center text-lightwhite leading-relaxed px-2 md:px-0'>Take the first step towards a transformative future by partnering with us today. Explore our cutting-edge solutions in Blockchain, Data Engineering, and AI, and experience the power of innovation and seamless connectivity. Contact us now for a personalized consultation, and together, let&#39;s build a brighter tomorrow. Your success awaits!</p>
                 <button className='primarybtn w-32 mx-auto'>Get a Quote</button>
             </section>
 
@@ -19,7 +19,7 @@ const Footer = () => {
                 <div className='col-span-2 pl-10 border-r border-darkwhite flex flex-col py-4 px-6 gap-y-4 justify-start items-start'>
                     <Logo />
                     <p className='text-sm text-lightwhite font-manrop leading-relaxed'>
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet nobis illum quisquam quaerat mollitia animi consectetur recusandae quae est repellendus, modi nam nulla hic voluptatum in quo veritatis adipisci, dolorem voluptatem? Odit voluptate omnis veniam recusandae mollitia est ipsam ea id accusantium doloremque repellendus numquam, ex in distinctio, beatae unde!
+                        YOUR OWN WEB!
                     </p>
                 </div>
                 <div className='flex flex-col col-span-4'>
