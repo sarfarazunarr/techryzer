@@ -5,16 +5,16 @@ import React from 'react'
 import { BiSearch } from 'react-icons/bi'
 
 export interface Blog {
-    "_id": string,
-    "title": string,
-    "meta_description": string,
-    "content": string,
-    "tags": string[],
-    "status": string,
-    "slug": string,
-    "imgUrl": string,
-    "author": string,
-    "category": string,
+    _id : string,
+    title: string,
+    meta_description: string,
+    content: string,
+    tags: string[],
+    status: string,
+    slug: string,
+    imgUrl: string,
+    author: string,
+    category: string,
 }
 
 export async function generateMetadata() {
@@ -47,7 +47,7 @@ const Blogs = async () => {
         
     const data = await fetch(`${process.env.NEXT_PUBLIC_URL}/blog`)
     const tempPosts = await data.json()
-    const posts: Blog[] = tempPosts.blogsData;
+    const posts = tempPosts.blogsData as Blog[] || [];
     return (
         <div>
 
