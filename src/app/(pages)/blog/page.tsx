@@ -45,23 +45,23 @@ export async function generateMetadata() {
 
 const Blogs = async () => {
         
-    // const data = await fetch(`${process.env.NEXT_PUBLIC_URL}/blog`)
-    // const tempPosts = await data.json()
-    // const posts = tempPosts.blogsData as Blog[] || [];
-    const posts: Blog[] = [
-      {
-        _id: "willcome",
-        author: "willid",
-        category: "Tech",
-        content: "Will come",
-        imgUrl: "/blog.png",
-        meta_description: "will come",
-        slug: "will-come",
-        status: "published",
-        tags: ["hello"],
-        title: "Will Come"
-      }
-    ]
+    const data = await fetch(`${process.env.NEXT_PUBLIC_URL}/blog`)
+    const tempPosts = await data.json()
+    const posts = tempPosts.blogsData as Blog[] || [];
+    // const posts: Blog[] = [
+    //   {
+    //     _id: "willcome",
+    //     author: "willid",
+    //     category: "Tech",
+    //     content: "Will come",
+    //     imgUrl: "/blog.png",
+    //     meta_description: "will come",
+    //     slug: "will-come",
+    //     status: "published",
+    //     tags: ["hello"],
+    //     title: "Will Come"
+    //   }
+    // ]
     return (
         <div>
 
