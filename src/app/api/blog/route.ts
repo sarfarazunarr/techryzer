@@ -1,7 +1,34 @@
 import Blog from "@/models/Blogs.model";
 import { NextRequest, NextResponse } from "next/server";
 import ConnectDB from "@/utils/connectdb";
-import { uploadToCloudinary } from "../upload/route";
+import { cloudinary } from "@/utils/cloudinary";
+import { UploadApiErrorResponse, UploadApiResponse } from "cloudinary";
+
+
+type UploadResponse = 
+  { success: true; result?: UploadApiResponse } | 
+  { success: false; error: UploadApiErrorResponse };
+
+const uploadToCloudinary = (
+  fileUri: string, fileName: string): Promise<UploadResponse> => {
+  return new Promise((resolve, reject) => {
+    cloudinary.uploader
+      .upload(fileUri, {
+        invalidate: true,
+        resource_type: "auto",
+        filename_override: fileName,
+        folder: "images", // any sub-folder name in your cloud
+        use_filename: true,
+      })
+      .then((result) => {
+        resolve({ success: true, result });
+      })
+      .catch((error) => {
+        reject({ success: false, error });
+      });
+  });
+};
+
 
 export async function GET() {
     try {

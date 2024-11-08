@@ -2,10 +2,10 @@ import Blog from "@/models/Blogs.model";
 import ConnectDB from "@/utils/connectdb";
 import { NextRequest, NextResponse } from "next/server";
 
-export async function GET(req: NextRequest, { params }) {
+export async function GET(req: NextRequest, { params }: { params: Promise<{ id: string }>}) {
   try {
     await ConnectDB();
-    const { id } = params;
+    const { id } = await params;
 
     const blog = await Blog.findOne({ slug: id });
     if (!blog) return NextResponse.json({ message: "Not Found" }, { status: 404 });

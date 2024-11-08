@@ -2,23 +2,20 @@
 
 import Form from 'next/form';
 import Image from 'next/image';
-import React, { useState, useEffect } from 'react';
-
+import React, { useState, useEffect, useCallback } from 'react';
 const Comment = ({ blogId }: {blogId: string}) => {
     const [comments, setComments] = useState([]);
 
-    // Fetch comments on component mount or when a new comment is added
-    async function fetchComments() {
+    const fetchComments = useCallback(async () => {
         const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/blog/comment?blogId=${blogId}`);
         const data = await res.json();
         setComments(data);
-    }
+    }, [blogId]); // Add blogId as a dependency
 
     useEffect(() => {
         fetchComments();
     }, [fetchComments]);
 
-    // Post a new comment and refresh comments
     async function postComment(data:FormData) {
         await fetch(`${process.env.NEXT_PUBLIC_URL}/blog/comment`, {
             method: "POST",
@@ -26,7 +23,6 @@ const Comment = ({ blogId }: {blogId: string}) => {
         });
         fetchComments(); // Refetch comments after posting
     }
-
     return (
         <div className='flex flex-col bg-gray-800 p-5 md:p-10 gap-y-2 w-full md:w-1/2'>
             <h3 className='text-2xl md:text-3xl font-semibold font-outfit text-lightwhite'>Post Comment</h3>
