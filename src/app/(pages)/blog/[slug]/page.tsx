@@ -46,7 +46,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 const BlogContent = async ({ params }: { params: Promise<{ slug: string }> }) => {
 
   const { slug } = await params;
-
+  if(!slug){
+    return notFound();
+  }
   const data = await fetch(`${process.env.NEXT_PUBLIC_URL}/blog/${slug}`);
   if (data.status == 404) {
     return notFound();

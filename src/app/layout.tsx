@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: "Techryzer - Your Gateway to Web and AI Solutions!",
   description:
     "Techryzer is a cutting-edge startup specializing in web-based product solutions and innovative AI-powered technologies. We focus on delivering top-notch quality and tailored services to meet diverse needs and drive innovation.",
-  
+    metadataBase: new URL('http://techryzer.com/'),
   // OpenGraph metadata
   openGraph: {
     title: "Techryzer - Your Gateway to Web and AI Solutions!",

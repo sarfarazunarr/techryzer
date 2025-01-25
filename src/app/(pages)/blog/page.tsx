@@ -22,6 +22,7 @@ export async function generateMetadata() {
     title: "Blogs - Techryzer",
     description:
       "Discover insightful blogs by Techryzer on the latest trends in technology, web development, and AI innovations. Gain valuable knowledge and stay ahead in the tech world with our expert articles.",
+    metadataBase: "https://techryzer.com/",
     openGraph: {
       title: "Blogs - Techryzer",
       description:
@@ -35,23 +36,16 @@ export async function generateMetadata() {
           alt: "Techryzer Blogs",
         },
       ],
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: "Blogs - Techryzer",
-      description:
-        "Stay informed with Techryzer's blog, featuring expert articles on technology, web development, and AI. Dive into the latest trends and innovations.",
-      images: ["/logo.jpg"],
-    },
+    }
   };
   
 }
 
 const Blogs = async () => {
-  let posts;
-  const data = await fetch(`${process.env.NEXT_PUBLIC_URL}/blog`, {})
-  const tempPosts = await data.json()
+  let posts: Blog[] = [];
+  const data = await fetch(`${process.env.NEXT_PUBLIC_URL || 'http://techryzer.com/api'}/blog`, {})
   if(data.ok){
+    const tempPosts = await data.json();
     posts = tempPosts.blogsData as Blog[] || [];
   }
 

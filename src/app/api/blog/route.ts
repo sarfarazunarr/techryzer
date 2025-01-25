@@ -93,58 +93,67 @@ export async function PUT(req: NextRequest) {
     if (!success) {
       return NextResponse.json({ message: issue }, { status: 400 });
     }
+
     await ConnectDB();
+
     const data = await req.formData();
-    const id = data.get('id');
-    const title = data.get('title');
-    const meta_description = data.get('meta_description');
-    const content = data.get('content');
-    const tags = data.get('tags');
-    const status = data.get('status');
-    const slug = data.get('slug');
-    const category = data.get('category');
+    const id = data.get('id') as string;
+    const title = data.get('title') as string;
+    const meta_description = data.get('meta_description') as string;
+    const content = data.get('content') as string;
+    const tags = data.get('tags') as string;
+    const status = data.get('status') as string;
+    const slug = data.get('slug') as string;
+    const category = data.get('category') as string;
 
     const file = data.get("file") as File;
     const findBlog = await Blog.findById(id);
-    if (!findBlog) return NextResponse.json({ message: "Blog Not Found" }, { status: 400 });
 
-    let imgUrl;
+    if (!findBlog) {
+      return NextResponse.json({ message: "Blog Not Found" }, { status: 400 });
+    }
+
+    let imgUrl = findBlog.imgUrl; 
 
     if (file) {
       const fileBuffer = await file.arrayBuffer();
-
       const mimeType = file.type;
       const encoding = "base64";
       const base64Data = Buffer.from(fileBuffer).toString("base64");
-
-      // this will be used to upload the file
-      const fileUri = "data:" + mimeType + ";" + encoding + "," + base64Data;
+      const fileUri = `data:${mimeType};${encoding},${base64Data}`;
 
       const res = await uploadToCloudinary(fileUri, file.name);
       if (res.success && res.result) {
-        imgUrl = res.result.secure_url
+        imgUrl = res.result.secure_url;
       } else {
         return NextResponse.json({ error: "Failed to upload image" }, { status: 400 });
       }
-      return imgUrl;
-    } else {
-      imgUrl = findBlog.imgUrl;
     }
-
 
     const update = await Blog.findByIdAndUpdate(id, {
       $set: {
-        title, meta_description, content, tags, slug, status, imgUrl, category
-      }
+        title,
+        meta_description,
+        content,
+        tags,
+        slug,
+        status,
+        imgUrl,
+        category,
+      },
     });
+
     if (!update) {
-      return NextResponse.json({ message: "Blog not updated" }, { status: 400 })
+      return NextResponse.json({ message: "Blog not updated" }, { status: 400 });
     }
 
-    return NextResponse.json({ message: "Blog Updated!" }, { status: 200 })
-  } catch (error: unknown) {
-    console.log(error)
-    return NextResponse.json({ message: "Failed to update blog, server error", error }, { status: 500 })
+    return NextResponse.json({ message: "Blog Updated!" }, { status: 200 });
+  } catch (error) {
+    console.error(error);
+    return NextResponse.json(
+      { message: "Failed to update blog, server error", error },
+      { status: 500 }
+    );
   }
 }
 
