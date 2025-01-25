@@ -8,7 +8,6 @@ const blogSchema = new mongoose.Schema({
     status: {type: String, enum: ["published", "draft"], default: "draft"},
     slug: {type: String},
     imgUrl: {type: String},
-    author: {type: mongoose.Types.ObjectId, ref: "User", required: true},
     category: {type: String, required: true}
 }, {timestamps: true})
 

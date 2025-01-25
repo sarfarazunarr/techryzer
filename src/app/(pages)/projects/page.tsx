@@ -1,12 +1,45 @@
 import Hero from '@/components/Hero'
 import Project from '@/components/Project'
 import React from 'react'
+
 export async function generateMetadata() {
   return {
     title: "Projects - Techryzer",
-    description: "Explore amazing open source projects and web solutions that are available for free and some are freemium!",
+    description:
+      "Discover innovative open-source projects and cutting-edge web solutions by Techryzer. Access free and freemium tools designed to empower developers and businesses alike.",
+    keywords: [
+      "Techryzer projects",
+      "open-source solutions",
+      "web development tools",
+      "freemium web solutions",
+      "AI projects",
+      "developer tools",
+      "cutting-edge web solutions",
+    ],
+    openGraph: {
+      title: "Projects - Techryzer",
+      description:
+        "Explore Techryzer's innovative open-source projects and web solutions. Unlock free and freemium tools for developers and businesses.",
+      url: `${process.env.NEXT_PUBLIC_URL}/projects`,
+      images: [
+        {
+          url: "/logo.jpg",
+          width: 1200,
+          height: 630,
+          alt: "Techryzer Projects",
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "Projects - Techryzer",
+      description:
+        "Discover Techryzer's projects, including open-source innovations and freemium solutions for developers and businesses.",
+      images: ["/logo.jpg"],
+    },
   };
 }
+
 
 const Projects = () => {
   return (

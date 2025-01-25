@@ -5,13 +5,15 @@ import Footer from "@/components/Footer";
 
 
 export const metadata: Metadata = {
-  title: "Techryzer - Your own web!",
-  description: "Techryzer is small company that focus creating web solutions that benefit anyone! We focus on quality of code as well as quality of service!",
+  title: "Techryzer - Your Gateway to Web and AI Solutions!",
+  description:
+    "Techryzer is a cutting-edge startup specializing in web-based product solutions and innovative AI-powered technologies. We focus on delivering top-notch quality and tailored services to meet diverse needs and drive innovation.",
   
   // OpenGraph metadata
   openGraph: {
-    title: "Techryzer",
-    description: "Techryzer is small company that focus creating web solutions that benefit anyone! We focus on quality of code as well as quality of service!",
+    title: "Techryzer - Your Gateway to Web and AI Solutions!",
+    description:
+      "Techryzer is a pioneering company offering web-based solutions and advanced AI services to empower businesses and individuals. Discover quality, innovation, and personalized solutions.",
     url: process.env.NEXT_URL,
     type: "website",
     images: [
@@ -21,18 +23,20 @@ export const metadata: Metadata = {
         height: 630,
       },
     ],
-    siteName: "Techryzer - Your own web!",
+    siteName: "Techryzer - Your Gateway to Web and AI Solutions!",
   },
   
   // Twitter card metadata
   twitter: {
     card: "summary_large_image",
-    title: "Techryzer - Your own web!",
-    description: "Techryzer is small company that focus creating web solutions that benefit anyone! We focus on quality of code as well as quality of service!",
+    title: "Techryzer - Your Gateway to Web and AI Solutions!",
+    description:
+      "Explore Techryzer, your partner in web and AI innovations. We provide high-quality solutions that drive success for businesses and individuals.",
     images: ["/logo.jpg"],
     site: "@techryzer",
   },
 };
+
 
 export default function RootLayout({
   children,

@@ -43,7 +43,7 @@
   }
 
   #blogcontent a {
-    color: #044ebd;
+    color: #2374ee;
     text-decoration: none;
   }
 
@@ -53,11 +53,13 @@
 
   #blogcontent ul,
   #blogcontent ol {
+    color: #d9d9d9;
     padding-left: 1.5em;
     margin: 1em 0;
   }
 
   #blogcontent li {
+    color: #d9d9d9;
     margin: 0.5em 0;
   }
 

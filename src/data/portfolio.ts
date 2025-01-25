@@ -1,5 +1,12 @@
 const projectsdata = [
     {
+        img: "/projects/hekto.jpg",
+        title: "Hekto - Ecommerce",
+        description: "It is a full stack ecommerce website with cart, checkout, user authentication created with NextJS and Sanity CMS.",
+        github: "https://github.com/sarfarazunarr/hekto-ecommerce",
+        video: "https://hekto-ecommerce-web.vercel.app/",
+    },
+    {
         img: "/projects/livelap.jpg",
         title: "Livelap - Ecommerce",
         description: "It is a full stack ecommerce website with stripe payment, cart, checkout, user authentication created with PHP. It contains dashboard for vendor and admin.",

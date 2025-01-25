@@ -17,7 +17,7 @@ const ContactForm = () => {
     }
   return (
     <Form action={savedata}>
-    <div className='w-1/3 mx-auto grid grid-cols-2 gap-5'>
+    <div className='w-full md:w-1/3 mx-auto grid grid-cols-1 md:grid-cols-2 gap-5'>
         <div className='flex flex-col gap-2'>
             <label htmlFor="firstName" className='font-manrop text-lightwhite font-semibold'>First Name</label>
             <input type="text" name='firstName' placeholder='John' className='contactinput' />

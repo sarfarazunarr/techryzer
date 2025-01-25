@@ -30,7 +30,7 @@ export default function Home() {
       <CardsSection title="Why Choose Techryzer!" btnText="Connect Now" btnLink="/contact" cards={cardsData} />
       <ImageWithText imgUrl="/freelancerhub.jpg" alt="freelancing" revert={true} content="Our Team is thinking to create a freelancing portal with Techryzer and create amazing products that help freelancers to work effieciently. Soon we will publish a new platform where you can create your profiles, show your portfolios and can share with anyone and can get clients. We are also working on some awesome tools that can support freelancers!" />
 
-      <Portfolio />
+      <Portfolio length={8} />
     <CardsSection title="What people say about Techryzer!" btnText="Know About Us!" btnLink="/about" cards={testimonialData} />
     </>
   );

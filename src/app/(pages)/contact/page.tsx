@@ -4,9 +4,11 @@ import ContactForm from './form'
 
 export async function generateMetadata() {
   return {
-    title: "Contact - Techryzer",
-    description: "Need any help or assistance? Just connect with techryzer team and get your problem solved instantly!",
+    title: "Contact Us - Techryzer",
+    description:
+      "Have questions or need assistance? Get in touch with the Techryzer team for prompt support and expert solutions. We're here to help you succeed!",
   };
+  
 }
 
 const Contact = () => {

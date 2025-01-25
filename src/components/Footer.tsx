@@ -44,7 +44,7 @@ const Footer = () => {
                             <BsWhatsapp size={25} className='text-lightwhite' />
                             </div>
                             <h3 className='text-white font-semibold text-2xl'>Connect on Whatsapp</h3>
-                            <p className='text-sm text-lightwhite'>+92 301 2591774</p>
+                            <Link href={`https://wa.link/abnj43`} className='text-sm text-lightwhite cursor-pointer'>+92 316 1563925</Link>
                         </div>
                         <div className='w-full  border border-darkwhite p-5 flex justify-start items-start flex-col gap-y-3'>
                             <div className='w-10 h-10 p-2 flex justify-center items-center rounded-full bg-gray-700'>
