@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import GoogleScript from "@/components/GoogleScript";
 
 
 export const metadata: Metadata = {
@@ -45,6 +46,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <GoogleScript />
       <body className="bg-dark">
         <Navbar />
         {children}
