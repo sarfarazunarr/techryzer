@@ -43,7 +43,7 @@ export async function generateMetadata() {
 
 const Blogs = async () => {
   let posts: Blog[] = [];
-  const data = await fetch(`${process.env.NEXT_PUBLIC_URL || 'http://techryzer.com/api'}/blog`, {})
+  const data = await fetch(`${process.env.NEXT_PUBLIC_URL || 'http://techryzer.com/api'}/blog`, {next:{revalidate: 3600}})
   if(data.ok){
     const tempPosts = await data.json();
     posts = tempPosts.blogsData as Blog[] || [];
