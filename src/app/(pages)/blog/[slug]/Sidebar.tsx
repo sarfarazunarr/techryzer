@@ -25,7 +25,7 @@ const Sidebar = ({ posts }: { posts: Blog[] }) => {
             </Form>
             {posts.length > 0 && posts.map((post, index) => {
                 return (
-                    <Card key={index} img={post.imgUrl} title={post.title} description={post.meta_description} link={process.env.NEXT_URL + "blog/" + post.slug} btnText='Read More' />
+                    <Card key={index} img={post.imgUrl} title={post.title} description={post.meta_description} link={"/blog/" + post.slug} btnText='Read More' />
                 )
             })}
 
