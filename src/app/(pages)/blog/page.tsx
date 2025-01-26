@@ -54,12 +54,12 @@ const Blogs = async () => {
 
       <Hero title='Our Blog' content='Welcome to our blog where we share insights, stories, and updates about our projects, industry trends, and the innovative solutions we are working on.' />
       {posts && posts.length > 0 && <>
-        <div className='w-full md:w-1/4 flex p-1 px-2 mx-auto bg-white rounded-full'>
+        <div className='w-[85%] md:w-1/4 flex p-2 py-3 mx-auto bg-white rounded-md relative'>
           <input type="text" name='search' id='search' placeholder='Search Blog' className='outline-none text-xl ml-2 md:ml-8 bg-transparent' />
-          <button className='primarybtn'><BiSearch size={20} /></button>
+          <button className='primarybtn absolute top-1 right-2'><BiSearch size={20} /></button>
         </div>
         <div className='w-full py-20'>
-          {posts && <MainSection title={posts[0].title} content={posts[0].meta_description} btnText='Read this Blog' link={`${process.env.NEXT_URL}blog/${posts[0].slug}`} alt={posts[0].title} image={posts[0].imgUrl} span='Recent' />}
+          {posts && <MainSection title={posts[0].title} content={posts[0].meta_description} btnText='Read this Blog' link={`${process.env.NEXT_URL}blog/${posts[0].slug}`} alt={posts[0].title || 'blog-image'} image={posts[0].imgUrl} span='Recent' />}
         </div>
 
         <section className='grid grid-cols-1 md:grid-cols-4 gap-3 pb-20 mx-4 md:mx-10'>

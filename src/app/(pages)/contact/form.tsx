@@ -16,27 +16,27 @@ const ContactForm = () => {
         setPending(false)
     }
   return (
-    <Form action={savedata}>
-    <div className='w-full md:w-1/3 mx-auto grid grid-cols-1 md:grid-cols-2 gap-5'>
-        <div className='flex flex-col gap-2'>
+    <Form action={savedata} >
+    <div className='w-full md:w-1/3 mx-auto grid grid-cols-2 gap-5 md:px-0 px-4'>
+        <div className='flex flex-col gap-2 col-span-2 md:col-span-1'>
             <label htmlFor="firstName" className='font-manrop text-lightwhite font-semibold'>First Name</label>
-            <input type="text" name='firstName' placeholder='John' className='contactinput' />
+            <input type="text" name='firstName' placeholder='John' className='contactinput' required />
         </div>
-        <div className='flex flex-col gap-2'>
+        <div className='flex flex-col gap-2 col-span-2 md:col-span-1'>
             <label htmlFor="lastName" className='font-manrop text-lightwhite font-semibold'>Last Name</label>
-            <input type="text" name='lastName' placeholder='Doe' className='contactinput' />
+            <input type="text" name='lastName' placeholder='Doe' className='contactinput' required />
         </div>
-        <div className='flex flex-col gap-2'>
+        <div className='flex flex-col gap-2 col-span-2 md:col-span-1'>
             <label htmlFor="phone" className='font-manrop text-lightwhite font-semibold'>Phone Number</label>
-            <input type="text" name='phone' placeholder='+92 301 2345678' className='contactinput' />
+            <input type="text" name='phone' placeholder='+92 301 2345678' className='contactinput' required />
         </div>
-        <div className='flex flex-col gap-2'>
+        <div className='flex flex-col gap-2 col-span-2 md:col-span-1'>
             <label htmlFor="email" className='font-manrop text-lightwhite font-semibold'>Email</label>
-            <input type="text" name='email' placeholder='abc@xyz.com' className='contactinput' />
+            <input type="email" name='email' placeholder='abc@xyz.com' className='contactinput' required />
         </div>
         <div className='flex flex-col col-span-2 gap-2'>
             <label htmlFor="message" className='font-manrop text-lightwhite font-semibold'>Message</label>
-            <textarea name='message' placeholder='Type your message...' rows={5} className='contactinput' />
+            <textarea name='message' placeholder='Type your message...' rows={5} className='contactinput' required />
         </div>
         <div className='flex flex-col items-start justify-center col-span-2'>
         <button className='primarybtn flex justify-center gap-5 items-center'>{pending ? "Sending..." : "Send Message"} {!pending && <BsArrowUpRight size={20} />}</button>

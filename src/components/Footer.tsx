@@ -12,7 +12,7 @@ const Footer = () => {
             <section className='flex flex-col gap-y-5 my-5 w-full md:w-2/3 mx-auto'>
                 <h3 className='font-outfit text-6xl text-white text-center font-semibold'>Let&#39;s Work Together!</h3>
                 <p className='font-manrop text-center text-lightwhite leading-relaxed px-2 md:px-0'>Take the first step towards a transformative future by partnering with us today. Explore our cutting-edge solutions in Blockchain, Data Engineering, and AI, and experience the power of innovation and seamless connectivity. Contact us now for a personalized consultation, and together, let&#39;s build a brighter tomorrow. Your success awaits!</p>
-                <button className='primarybtn w-32 mx-auto'>Get a Quote</button>
+                <button className='primarybtn w-auto mx-auto'>Get a Quote</button>
             </section>
 
             <section className='grid grid-cols-1 md:grid-cols-6 border mt-20 border-darkwhite w-full'>
