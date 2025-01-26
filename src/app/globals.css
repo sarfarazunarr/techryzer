@@ -37,6 +37,15 @@
   #blogcontent h3 {
     @apply text-3xl font-semibold font-outfit pt-5 pb-3 capitalize text-white
   }
+  #blogcontent h4 {
+    @apply text-2xl font-semibold font-outfit pt-5 pb-3 capitalize text-white
+  }
+  #blogcontent h5 {
+    @apply text-xl font-semibold font-outfit pt-5 pb-3 capitalize text-white
+  }
+  #blogcontent h6 {
+    @apply text-lg font-semibold font-outfit pt-5 pb-3 capitalize text-white
+  }
 
   #blogcontent p {
     @apply text-[15px] text-lightwhite font-normal font-manrop leading-relaxed
