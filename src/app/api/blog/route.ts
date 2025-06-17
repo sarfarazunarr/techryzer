@@ -57,8 +57,15 @@ export async function POST(req: NextRequest) {
     const status = data.get('status');
     const slug = data.get('slug');
     const category = data.get('category');
+    const image_url = data.get("imgUrl")
     if (!title || !meta_description || !content || !tags || !slug || !category) {
       return NextResponse.json({ message: "Please fill all fields!" }, { status: 400 })
+    }
+    if (image_url) {
+      await new Blog({
+        title, meta_description, content, tags, slug, status, image_url, category
+      }).save();
+      return NextResponse.json({ slug: `https://techryzer.com/blog/${slug}` }, { status: 201 })
     }
     const file = data.get("file") as File;
 
