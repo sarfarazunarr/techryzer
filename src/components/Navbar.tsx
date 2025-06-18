@@ -15,7 +15,7 @@ const Navbar = () => {
       <div className='lg:flex hidden items-center ml-10 justify-start font-manrop'>
         <Link className={`${pathname == "/" ? "navbarbtn-active" : "navbarbtn"} border-r-0`} style={{ borderLeft: 0 }} href={"/"}>Home</Link>
         <Link className={`${pathname == "/about" ? "navbarbtn-active" : "navbarbtn"}`} href={"/about"}>About</Link>
-        <Link className={`${pathname == "/projects" ? "navbarbtn-active" : "navbarbtn"}`} href={"/projects"}>Projects</Link>
+        <Link className={`${pathname == "/services" ? "navbarbtn-active" : "navbarbtn"}`} href={"/services"}>Services</Link>
       </div>
       <Logo />
       <div className='lg:flex hidden items-center justify-end font-manrop mr-10'>
@@ -43,7 +43,7 @@ const Navbar = () => {
             <Logo />
             <Link className={`${pathname == "/" ? "navbarbtn-active block" : "navbarbtn"} w-full text-center mt-5`} href={"/"}>Home</Link>
             <Link className={`${pathname == "/about" ? "navbarbtn-active" : "navbarbtn"} w-full text-center`} href={"/about"}>About</Link>
-            <Link className={`${pathname == "/projects" ? "navbarbtn-active" : "navbarbtn"} w-full text-center`} href={"/projects"}>Projects</Link>
+            <Link className={`${pathname == "/services" ? "navbarbtn-active" : "navbarbtn"} w-full text-center`} href={"/services"}>Services</Link>
             <Link className={`${pathname == "/blog" ? "navbarbtn-active" : "navbarbtn"} w-full text-center`} href={"/blog"}>Blog</Link>
             <Link className={`${pathname == "/career" ? "navbarbtn-active" : "navbarbtn"} w-full text-center`} href={"/career"}>Career</Link>
             <Link className={`${pathname == "/contact" ? "navbarbtn-active" : "navbarbtn"} w-full text-center`} href={"/contact"}>Contact</Link>

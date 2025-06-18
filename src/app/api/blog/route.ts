@@ -57,8 +57,8 @@ export async function POST(req: NextRequest) {
     const status = data.get('status');
     const slug = data.get('slug');
     const category = data.get('category');
-    const image_url = data.get("imgUrl")
-    if (!title || !meta_description || !content || !tags || !slug || !category) {
+    const image_url = data.get("image_url")
+    if (!title || !meta_description || !content || !tags || !slug || !category || !image_url) {
       return NextResponse.json({ message: "Please fill all fields!" }, { status: 400 })
     }
     if (image_url) {
