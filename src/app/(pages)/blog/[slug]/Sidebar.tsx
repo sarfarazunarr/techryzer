@@ -69,13 +69,13 @@ const Sidebar = ({ posts }: { posts: Blog[] }) => {
       <div className="border border-teal-500 bg-teal-50 text-black rounded-md p-4">
         <h3 className="text-lg font-bold mb-2">🎁 Free Resource!</h3>
         <p className="text-sm mb-3">Download our free guide: <strong>Top 10 AI Workflows That Save Businesses Hours Every Week</strong></p>
-        <a
+        <Link
           href="/"
           rel="noopener noreferrer"
           className="text-sm inline-block bg-teal-500 text-white px-4 py-2 rounded hover:bg-teal-600 transition"
         >
           Coming Soon
-        </a>
+        </Link>
       </div>
 
       {/* Blog Posts */}

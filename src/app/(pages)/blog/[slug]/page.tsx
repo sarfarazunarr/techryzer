@@ -69,7 +69,8 @@ const BlogContent = async ({ params }: { params: Promise<{ slug: string }> }) =>
           <div className='col-span-1 md:col-span-6 flex flex-col p-5'>
             <div id="blogcontent" className='pb-10 p-2'>
               <ReactMarkdown components={{
-                img: ({ node, ...props }) => (
+
+                img: ({ ...props }) => (
                   <Image
                     src={props.src || ''}
                     alt={props.alt || ''}
@@ -78,7 +79,7 @@ const BlogContent = async ({ params }: { params: Promise<{ slug: string }> }) =>
                     style={{ width: '100%', height: 'auto' }}
                   />
                 ),
-                a: ({ node, href, children, ...props }) => {
+                a: ({ href, children, ...props }) => {
                   const isInternalLink = href?.startsWith('/');
                   if (isInternalLink) {
                     return (
