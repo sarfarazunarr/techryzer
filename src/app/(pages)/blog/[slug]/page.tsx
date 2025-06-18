@@ -67,7 +67,38 @@ const BlogContent = async ({ params }: { params: Promise<{ slug: string }> }) =>
         <div className='grid grid-cols-1 md:grid-cols-8'>
         <div className='col-span-1 md:col-span-6 flex flex-col p-5'>
           <div id="blogcontent" className='pb-10 p-2'>
-            <ReactMarkdown remarkPlugins={[remarkGfm]}>{post.content}</ReactMarkdown>
+            <ReactMarkdown remarkPlugins={[remarkGfm]} 
+      components={{
+        img: ({ node, ...props }) => (
+          <Image
+            src={props.src || ''}
+            alt={props.alt || ''}
+            width={600}
+            height={400}
+            style={{ width: '100%', height: 'auto' }}
+          />
+        ),
+        a: ({ node, href, children, ...props }) => {
+          const isInternalLink = href?.startsWith('/');
+          if (isInternalLink) {
+            return (
+              <Link href={href || ''}>
+                <a {...props}>{children}</a>
+              </Link>
+            );
+          }
+          return (
+            <a href={href} target="_blank" rel="noopener noreferrer" {...props}>
+              {children}
+            </a>
+          );
+        },
+      }}
+    >
+      {post.content}
+    </ReactMarkdown>
+  );
+            }
           </div>
           <Comment blogId={post._id} />
 
