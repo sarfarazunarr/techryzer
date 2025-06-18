@@ -69,12 +69,11 @@ const Sidebar = ({ posts }: { posts: Blog[] }) => {
         <h3 className="text-lg font-bold mb-2">🎁 Free Resource!</h3>
         <p className="text-sm mb-3">Download our free guide: <strong>&apos;Top 10 AI Workflows That Save Businesses Hours Every Week&apos;</strong></p>
         <a
-          href="/resources/ai-workflows-guide.pdf"
-          target="_blank"
+          href="/"
           rel="noopener noreferrer"
           className="text-sm inline-block bg-teal-500 text-white px-4 py-2 rounded hover:bg-teal-600 transition"
         >
-          Download Now
+          Coming Soon
         </a>
       </div>
 

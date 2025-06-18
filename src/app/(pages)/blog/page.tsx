@@ -48,7 +48,6 @@ const Blogs = async () => {
     const tempPosts = await data.json();
     posts = tempPosts.blogsData as Blog[] || [];
   }
-
   return (
     <div>
 
@@ -68,7 +67,6 @@ const Blogs = async () => {
               <Card key={index} img={post.imgUrl} title={post.title} description={post.meta_description} link={"blog/" + post.slug} btnText='Read More' />
             )
           })}
-
         </section>
       </>}
       {posts && posts.length <= 0 && (

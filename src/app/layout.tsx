@@ -6,37 +6,57 @@ import GoogleScript from "@/components/GoogleScript";
 
 
 export const metadata: Metadata = {
-  title: "Techryzer - Your Gateway to Web and AI Solutions!",
+  title: "Techryzer - Web Development, AI Integration & Automation Services",
   description:
-    "Techryzer offers cutting-edge web solutions & AI-powered technologies, delivering qualityservices and managing web based projects.",
-    metadataBase: new URL('http://techryzer.com/'),
-  // OpenGraph metadata
+    "Techryzer is your partner for innovative web development, AI integrations, and workflow automation. We build modern, scalable, and smart digital solutions for startups, SMEs, and enterprises.",
+  metadataBase: new URL('https://www.techryzer.com'),
+
+  keywords: [
+    "web development",
+    "AI integration",
+    "automation services",
+    "n8n workflows",
+    "freemium AI tools",
+    "Next.js development",
+    "business automation",
+    "startup tech partner",
+    "Techryzer solutions",
+    "AI for businesses",
+    "custom software development",
+    "React developer agency"
+  ],
+
   openGraph: {
-    title: "Techryzer - Your Gateway to Web and AI Solutions!",
+    title: "Techryzer - Web Development, AI Integration & Automation Services",
     description:
-      "Techryzer is a pioneering company offering web-based solutions and advanced AI services to empower businesses and individuals. Discover quality, innovation, and personalized solutions.",
-    url: process.env.NEXT_URL,
+      "Discover how Techryzer helps businesses build websites, apps, and AI workflows 2x faster. Explore our services and smart solutions for digital transformation.",
+    url: "https://www.techryzer.com",
     type: "website",
+    siteName: "Techryzer",
     images: [
       {
         url: "/logo.jpg",
         width: 1200,
         height: 630,
+        alt: "Techryzer Logo",
       },
     ],
-    siteName: "Techryzer - Your Gateway to Web and AI Solutions!",
   },
-  
-  // Twitter card metadata
+
   twitter: {
     card: "summary_large_image",
-    title: "Techryzer - Your Gateway to Web and AI Solutions!",
+    title: "Techryzer - Web Development & AI Automation Partner",
     description:
-      "Explore Techryzer, your partner in web and AI innovations. We provide high-quality solutions that drive success for businesses and individuals.",
-    images: ["/logo.jpg"],
+      "Build smarter, faster with Techryzer. We develop web apps, automate workflows using AI and n8n, and deliver modern solutions for startups and enterprises.",
     site: "@techryzer",
+    images: ["/logo.jpg"],
+  },
+
+  icons: {
+    icon: "/favicon.ico",
   },
 };
+
 
 
 export default function RootLayout({

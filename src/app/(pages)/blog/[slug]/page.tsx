@@ -5,6 +5,8 @@ import { Blog } from '../page';
 import Comment from '@/components/Comment';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
+import ReactMarkdown from 'react-markdown'
+import remarkGfm from 'remark-gfm'
 
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
@@ -64,8 +66,11 @@ const BlogContent = async ({ params }: { params: Promise<{ slug: string }> }) =>
         <Image src={post.imgUrl} width={600} height={600} className="mx-auto object-cover rounded-md" alt={post.title} />
         <div className='grid grid-cols-1 md:grid-cols-8'>
         <div className='col-span-1 md:col-span-6 flex flex-col p-5'>
-          <div id="blogcontent" className='pb-10' dangerouslySetInnerHTML={{ __html: post.content }}></div>
+          <div id="blogcontent" className='pb-10 p-2'>
+            <ReactMarkdown remarkPlugins={[remarkGfm]}>{post.content}</ReactMarkdown>
+          </div>
           <Comment blogId={post._id} />
+
         </div>
           <div className='col-span-2 p-4 rounded-md bg-[#1d1d1d]'>
             <Sidebar posts={otherPosts} />
