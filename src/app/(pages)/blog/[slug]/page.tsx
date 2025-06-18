@@ -7,6 +7,7 @@ import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
+import Link from 'next/link';
 
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
@@ -48,7 +49,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 const BlogContent = async ({ params }: { params: Promise<{ slug: string }> }) => {
 
   const { slug } = await params;
-  if(!slug){
+  if (!slug) {
     return notFound();
   }
   const data = await fetch(`${process.env.NEXT_PUBLIC_URL}/blog/${slug}`);
@@ -65,44 +66,40 @@ const BlogContent = async ({ params }: { params: Promise<{ slug: string }> }) =>
         <Hero title={post.title} content={post.meta_description} />
         <Image src={post.imgUrl} width={600} height={600} className="mx-auto object-cover rounded-md" alt={post.title} />
         <div className='grid grid-cols-1 md:grid-cols-8'>
-        <div className='col-span-1 md:col-span-6 flex flex-col p-5'>
-          <div id="blogcontent" className='pb-10 p-2'>
-            <ReactMarkdown remarkPlugins={[remarkGfm]} 
-      components={{
-        img: ({ node, ...props }) => (
-          <Image
-            src={props.src || ''}
-            alt={props.alt || ''}
-            width={600}
-            height={400}
-            style={{ width: '100%', height: 'auto' }}
-          />
-        ),
-        a: ({ node, href, children, ...props }) => {
-          const isInternalLink = href?.startsWith('/');
-          if (isInternalLink) {
-            return (
-              <Link href={href || ''}>
-                <a {...props}>{children}</a>
-              </Link>
-            );
-          }
-          return (
-            <a href={href} target="_blank" rel="noopener noreferrer" {...props}>
-              {children}
-            </a>
-          );
-        },
-      }}
-    >
-      {post.content}
-    </ReactMarkdown>
-  );
-            }
-          </div>
-          <Comment blogId={post._id} />
+          <div className='col-span-1 md:col-span-6 flex flex-col p-5'>
+            <div id="blogcontent" className='pb-10 p-2'>
+              <ReactMarkdown components={{
+                img: ({ node, ...props }) => (
+                  <Image
+                    src={props.src || ''}
+                    alt={props.alt || ''}
+                    width={600}
+                    height={400}
+                    style={{ width: '100%', height: 'auto' }}
+                  />
+                ),
+                a: ({ node, href, children, ...props }) => {
+                  const isInternalLink = href?.startsWith('/');
+                  if (isInternalLink) {
+                    return (
+                      <Link href={href || ''}>
+                        <a {...props}>{children}</a>
+                      </Link>
+                    );
+                  }
+                  return (
+                    <a href={href} target="_blank" rel="noopener noreferrer" {...props}>
+                      {children}
+                    </a>
+                  );
+                },
+              }} remarkPlugins={[remarkGfm]}>
+                {post.content}
+              </ReactMarkdown>
+            </div>
+            <Comment blogId={post._id} />
 
-        </div>
+          </div>
           <div className='col-span-2 p-4 rounded-md bg-[#1d1d1d]'>
             <Sidebar posts={otherPosts} />
           </div>

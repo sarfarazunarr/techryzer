@@ -3,6 +3,7 @@
 import Card from '@/components/Card';
 import React, { useState } from 'react';
 import { Blog } from '../page';
+import Link from 'next/link';
 
 const Sidebar = ({ posts }: { posts: Blog[] }) => {
   const [msg, setMsg] = useState("");
@@ -56,18 +57,18 @@ const Sidebar = ({ posts }: { posts: Blog[] }) => {
       <div className="border border-yellow-400 bg-yellow-100 text-black rounded-md p-4 shadow-sm">
         <h3 className="text-lg font-bold mb-1">🚀 Start a Project With Us</h3>
         <p className="text-sm mb-3">Looking to build a website, app, or AI workflow? Let&apos;s talk about how we can help you launch faster.</p>
-        <a
+        <Link
           href="/quote"
           className="inline-block bg-yellow-400 text-black text-sm font-semibold px-4 py-2 rounded hover:bg-yellow-500 transition"
         >
           Get a Free Quote
-        </a>
+        </Link>
       </div>
 
       {/* Lead Magnet Offer */}
       <div className="border border-teal-500 bg-teal-50 text-black rounded-md p-4">
         <h3 className="text-lg font-bold mb-2">🎁 Free Resource!</h3>
-        <p className="text-sm mb-3">Download our free guide: <strong>&apos;Top 10 AI Workflows That Save Businesses Hours Every Week&apos;</strong></p>
+        <p className="text-sm mb-3">Download our free guide: <strong>Top 10 AI Workflows That Save Businesses Hours Every Week</strong></p>
         <a
           href="/"
           rel="noopener noreferrer"
