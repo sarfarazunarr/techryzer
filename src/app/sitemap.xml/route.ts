@@ -15,7 +15,9 @@ export async function GET() {
     'blog',
     'career',
     'contact',
-    'projects'
+    'services',
+    'portfolio',
+    'quote'
   ];
 
   const urls = [
