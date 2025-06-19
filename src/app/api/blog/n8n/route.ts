@@ -21,10 +21,10 @@ export async function POST(req: NextRequest) {
       status,
       slug,
       category,
-      image_url
+      imgUrl
     } = body;
 
-    if (!title || !meta_description || !content || !tags || !slug || !category || !image_url) {
+    if (!title || !meta_description || !content || !tags || !slug || !category || !imgUrl) {
       return NextResponse.json({ message: "Please fill all fields!" }, { status: 400 });
     }
 
@@ -35,7 +35,7 @@ export async function POST(req: NextRequest) {
       tags,
       slug,
       status,
-      image_url,
+      imgUrl,
       category
     }).save();
 
