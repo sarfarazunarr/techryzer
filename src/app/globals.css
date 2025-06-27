@@ -34,8 +34,6 @@
 .markdown_preview {
   background-color: #232428;
   padding: 5px;
-  height: auto;
-  overflow-y: scroll;
 }
 
 .markdown_preview h1 {
