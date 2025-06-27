@@ -67,7 +67,7 @@ const BlogContent = async ({ params }: { params: Promise<{ slug: string }> }) =>
         <Image src={post.imgUrl} width={600} height={600} className="mx-auto object-cover rounded-md" alt={post.title} />
         <div className='grid grid-cols-1 md:grid-cols-8'>
           <div className='col-span-1 md:col-span-6 flex flex-col p-5'>
-            <div id="blogcontent" className='pb-10 p-2'>
+            <div id="blogcontent" className='pb-10 p-2 markdown_preview'>
               <ReactMarkdown components={{
 
                 img: ({ ...props }) => (
